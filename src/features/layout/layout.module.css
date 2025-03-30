@@ -1,0 +1,23 @@
+.wrapper {
+    --layout-margin: 32px;
+
+    display: grid;
+    position: fixed;
+    justify-self: anchor-center;
+    grid-template-columns: 30% 70%;
+
+    height: calc(100vh - var(--layout-margin) - var(--layout-margin));
+    min-height: calc(var(--layout-margin) + var(--layout-margin));
+
+    width: calc(100vw - var(--layout-margin) - var(--layout-margin));
+    min-width: calc(320px - var(--layout-margin) - var(--layout-margin));
+    max-width: calc(1024px - var(--layout-margin) - var(--layout-margin));
+
+    margin: var(--layout-margin);
+
+    border: 2px solid black;
+}
+
+.wrapper > :first-child {
+    border-right: 1px solid black;
+}
