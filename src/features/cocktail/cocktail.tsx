@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import styles from './cocktail.module.css';
 import { useGetCocktails } from './api';
-import { MessageBox } from '../../base';
+import { LazyImg, MessageBox } from '../../base';
 import { Fragment } from 'react';
 
 export const Cocktail = () => {
@@ -42,7 +42,7 @@ export const Cocktail = () => {
                             </section>
                         </section>
                         {drink.strDrinkThumb && (
-                            <img
+                            <LazyImg
                                 className={styles.img}
                                 src={drink.strDrinkThumb}
                                 alt={drink.strDrink || 'drinkImg'}
