@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {
+    BrowserRouter,
     createBrowserRouter,
     Navigate,
     Outlet,
@@ -14,6 +15,7 @@ import { MessageBox } from './base';
 
 const queryClient = new QueryClient();
 
+const GH_PAGES_URL_POSTFIX = '/cocktail_test';
 const COCKTAIL_LIST = ['margarita', 'mojito', 'a1', 'kir', 'test'];
 
 const router = createBrowserRouter([
@@ -45,7 +47,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <QueryClientProvider client={queryClient}>
-            <RouterProvider router={router} />
+            <BrowserRouter basename={GH_PAGES_URL_POSTFIX}>
+                <RouterProvider router={router} />
+            </BrowserRouter>
         </QueryClientProvider>
     </StrictMode>
 );
