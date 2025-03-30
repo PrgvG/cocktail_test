@@ -33,5 +33,7 @@ class HttpService {
 }
 
 export const httpService = new HttpService(
-    axios.create({ baseURL: 'https://www.thecocktaildb.com/api/json/v1/1/' })
+    axios.create({
+        baseURL: 'https://www.thecocktaildb.com/api/json/v1/1/',
+    })
 );

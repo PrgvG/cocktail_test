@@ -54,7 +54,12 @@ export const Cocktail = () => {
                         <h3>List of ingredients:</h3>
                         <section className={styles.ingredients}>
                             {drink.ingredients.map((ingredient) => (
-                                <Fragment key={ingredient.ingredient}>
+                                <Fragment
+                                    key={
+                                        ingredient.ingredient +
+                                        ingredient.measure
+                                    }
+                                >
                                     <div>{ingredient.ingredient}</div>
                                     <div>{ingredient.measure}</div>
                                 </Fragment>
